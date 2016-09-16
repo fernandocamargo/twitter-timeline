@@ -1,0 +1,118 @@
+.wrapper.followers {
+  margin-top: 20px;
+}
+
+.wrapper.followers > .title {
+  display: none;
+}
+
+.wrapper.followers .paragraph {
+  line-height: 1;
+}
+
+.wrapper.followers .paragraph:before {
+  color: #8899a6;
+  display: inline-block;
+  content: '\f056';
+  font-family: 'rosetta-icons';
+  font-size: 18px;
+  line-height: 18px;
+  vertical-align: bottom;
+}
+
+.wrapper.followers .paragraph .anchor {
+  color: #a8a1a2;
+  font-size: 14px;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.wrapper.followers .paragraph .anchor:hover {
+  text-decoration: underline;
+}
+
+.wrapper.followers .collection {
+  margin-top: 13px;
+}
+
+.wrapper.followers .collection:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.wrapper.followers .item,
+.wrapper.followers .item .anchor:before {
+  border-radius: 4px;
+  height: 48px;
+  width: 48px;
+}
+
+.wrapper.followers .item {
+  float: left;
+  margin: 0 5px 5px 0;
+  position: relative;
+}
+
+.wrapper.followers .item:hover:before,
+.wrapper.followers .item:hover .anchor,
+.wrapper.followers .item .anchor:before,
+.wrapper.followers .item .anchor:after {
+  display: block;
+}
+
+.wrapper.followers .item:before,
+.wrapper.followers .item .anchor:before,
+.wrapper.followers .item .anchor:after {
+  content: '';
+  position: absolute;
+}
+
+.wrapper.followers .item:before {
+  display: none;
+  height: 10px;
+  left: 0;
+  top: -10px;
+  width: 100%;
+}
+
+.wrapper.followers .item .anchor {
+  background-color: #292f33;
+  border-radius: 4px;
+  bottom: calc(100% + 10px);
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: -51px;
+  opacity: 0.95;
+  padding: 6px 11px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  width: 128px;
+  z-index: 1;
+}
+
+.wrapper.followers .item .anchor:before {
+  left: 51px;
+  overflow: hidden;
+  top: calc(100% + 10px);
+}
+
+.wrapper.followers .item .anchor:after {
+  border-color: transparent;
+  border-style: solid;
+  border-top-color: #292f33;
+  border-width: 5px 5px 0;
+  left: 50%;
+  height: 0;
+  margin-left: -5px;
+  top: 100%;
+  width: 0;
+}
+
+@media only screen and (min-width: 674px) {
+  .wrapper.followers .item:nth-child(5n) {
+    margin-right: 0;
+  }
+}

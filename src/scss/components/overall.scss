@@ -1,0 +1,36 @@
+.wrapper.overall {
+  display: table-row-group;
+  width: 100%;
+}
+
+@media only screen and (min-width: 674px) {
+  .wrapper.overall {
+    clear: left;
+    display: block;
+    float: left;
+    margin: 15px 15px 0 15px;
+    width: 260px;
+  }
+}
+
+@media only screen and (min-width: 1190px) {
+  .wrapper.overall {
+    margin: 0;
+    padding-top: 10px;
+    position: absolute;
+    right: 0;
+    width: 290px;
+  }
+
+  .wrapper.overall:before {
+    background-color: #f5f8fa;
+    content: '';
+    display: block;
+    height: 100%;
+    left: calc(((100vw - 100%) / 2) * -1);
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+  }
+}

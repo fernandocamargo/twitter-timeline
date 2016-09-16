@@ -1,0 +1,21 @@
+.document {
+  background-color: #f5f8fa;
+  width: 100%;
+}
+
+.body {
+  font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.anchor {
+	outline: 0;
+}
+
+object,
+.navigation > .title {
+  display: none;
+}

@@ -1,0 +1,242 @@
+.wrapper.who-to-follow {
+  background-color: #fff;
+  border: solid 1px #e1e8ed;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 15px 0 45px 0;
+  position: relative;
+  width: calc(100% - 2px);
+}
+
+.wrapper.who-to-follow > .title,
+.wrapper.who-to-follow > .navigation.actions,
+.wrapper.who-to-follow > .navigation.actions .item {
+  float: left;
+}
+
+.wrapper.who-to-follow > .title {
+  color: #66757f;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0 0 15px 15px;
+}
+
+.wrapper.who-to-follow > .navigation.actions .item,
+.wrapper.who-to-follow > .navigation.actions .item .anchor {
+  font-size: 12px;
+}
+
+.wrapper.who-to-follow > .navigation.actions .item.find-friends {
+  bottom: 15px;
+  left: 15px;
+  position: absolute;
+}
+
+.wrapper.who-to-follow > .navigation.actions .item:not(.find-friends) {
+  line-height: 21px;
+}
+
+.wrapper.who-to-follow > .navigation.actions .item:not(.find-friends):before {
+  content: '.';
+  display: inline-block;
+  line-height: 1;
+  margin: 0 5px;
+  position: relative;
+  top: -3px;
+}
+
+.wrapper.who-to-follow > .navigation.actions .item .anchor {
+  color: #a8a1a2;
+  text-decoration: none;
+}
+
+.wrapper.who-to-follow > .navigation.actions .item .anchor:hover {
+  text-decoration: underline;
+}
+
+.wrapper.who-to-follow .definition {
+  background-position: -9999px -9999px;
+  background-repeat: no-repeat;
+  clear: both;
+  overflow: hidden;
+  margin: 10px 15px 0 15px;
+  min-height: 53px;
+  position: relative;
+}
+
+.wrapper.who-to-follow .definition > .title,
+.wrapper.who-to-follow .definition > .description {
+  margin-left: 48px;
+}
+
+.wrapper.who-to-follow .definition .title,
+.wrapper.who-to-follow .definition .title .anchor,
+.wrapper.who-to-follow .definition .title .anchor:before {
+  background-image: inherit;
+  background-repeat: inherit;
+}
+
+.wrapper.who-to-follow .definition .title,
+.wrapper.who-to-follow .definition .title .anchor {
+  background-position: inherit;
+}
+
+.wrapper.who-to-follow .definition .title .anchor {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.wrapper.who-to-follow .definition .title .anchor:before {
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  content: '';
+  display: block;
+  height: 48px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 5px;
+  width: 48px;
+}
+
+.wrapper.who-to-follow .definition .fragment.name,
+.wrapper.who-to-follow .definition .fragment.username,
+.wrapper.who-to-follow .definition .navigation.actions {
+  margin-left: 10px;
+}
+
+.wrapper.who-to-follow .definition .fragment.name {
+  color: #292f33;
+  font-weight: bold;
+}
+
+.wrapper.who-to-follow .definition .anchor:hover .fragment.name {
+  text-decoration: underline;
+}
+
+.wrapper.who-to-follow .definition .fragment.username {
+  color: #8899a6;
+  display: block;
+  line-height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrapper.who-to-follow .definition.verified-account .fragment.username:before {
+  color: #77c7f7;
+  content: '\f099';
+  display: inline-block;
+  font-family: 'rosetta-icons';
+  font-size: 16px;
+  line-height: 15px;
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}
+
+.wrapper.who-to-follow .definition .fragment.separator {
+  display: none;
+}
+
+.wrapper.who-to-follow .paragraph.followed-by,
+.wrapper.who-to-follow .paragraph.followed-by .anchor {
+  color: #8899a6;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.wrapper.who-to-follow .paragraph.followed-by {
+  display: block;
+  left: 10px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 10px);
+}
+
+.wrapper.who-to-follow .paragraph.followed-by .anchor:hover {
+  text-decoration: underline;
+}
+
+.wrapper.who-to-follow .item.ignore {
+  top: 0;
+}
+
+.wrapper.who-to-follow .item.ignore,
+.wrapper.who-to-follow .item.ignore .anchor:before {
+  position: absolute;
+  right: 0;
+}
+
+.wrapper.who-to-follow .item.ignore .anchor,
+.wrapper.who-to-follow .item.ignore .anchor:before {
+  display: block;
+}
+
+.wrapper.who-to-follow .item.ignore .anchor {
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.wrapper.who-to-follow .item.ignore .anchor:before {
+  color: #ccd6dd;
+  content: '\f045';
+  font-family: 'rosetta-icons';
+  font-size: 12px;
+  text-align: right;
+}
+
+.wrapper.who-to-follow .item.follow {
+  margin: 3px 0;
+}
+
+.wrapper.who-to-follow .item.follow .anchor {
+  background-color: #f5f8fa;
+  background-image: linear-gradient(#fff, #f5f8fa);
+  border: solid 1px #e1e8ed;
+  border-radius: 4px;
+  color: #292f33;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 3px 11px 5px;
+  position: relative;
+  text-decoration: none;
+}
+
+.wrapper.who-to-follow .item.follow .anchor:hover {
+  background-color: #e1e8ed;
+  background-image: linear-gradient(#fff, #e1e8ed);
+  border-color: #e1e8ed;
+}
+
+.wrapper.who-to-follow .item.follow .anchor:active {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(168, 161, 162, 0.5);
+}
+
+.wrapper.who-to-follow .item.follow .anchor:before {
+  color: #1da1f2;
+  content: '\f175';
+  display: inline-block;
+  font-family: 'rosetta-icons';
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 15px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+
+@media only screen and (min-width: 1190px) {
+  .wrapper.who-to-follow .definition .fragment.username {
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+    width: 60px;
+  }
+}

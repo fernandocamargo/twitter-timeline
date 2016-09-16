@@ -1,0 +1,34 @@
+.navigation.filter {
+  background-color: #fff;
+  border: solid 1px #e1e8ed;
+  border-radius: 5px 5px 0 0;
+  margin-top: 11px;
+  overflow: hidden;
+}
+
+.navigation.filter .item {
+  color: #292f33;
+  float: left;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  padding: 15px 5px 12px;
+}
+
+.navigation.filter .anchor {
+  color: #a8a1a2;
+  display: block;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.navigation.filter .anchor:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 674px) {
+  .navigation.filter .item {
+    font-size: 18px;
+    padding: 15px 15px 12px;
+  }
+}

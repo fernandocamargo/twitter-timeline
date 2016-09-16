@@ -1,0 +1,40 @@
+.wrapper.timeline {
+  display: table-footer-group;
+  padding-bottom: 200px;
+  width: 100%;
+}
+
+.wrapper.timeline > .title {
+  display: none;
+}
+
+@media only screen and (min-width: 674px) {
+  .wrapper.timeline {
+    display: block;
+    float: right;
+    margin: 0 10px;
+    width: calc(100% - 310px);
+  }
+}
+
+@media only screen and (min-width: 1190px) {
+  .wrapper.timeline {
+    left: 50%;
+    margin: 0 0 0 -295px;
+    position: absolute;
+    top: 60px;
+    width: 590px;
+  }
+
+  .wrapper.timeline:before {
+    background-color: #f5f8fa;
+    content: '';
+    display: block;
+    height: 100%;
+    left: calc(((100vw - 100%) / 2) * -1);
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+  }
+}

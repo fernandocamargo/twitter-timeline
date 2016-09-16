@@ -1,0 +1,74 @@
+@import 'typography';
+@import 'reset';
+@import 'generic';
+@import 'motion';
+
+@import 'components/profile';
+@import 'components/timeline';
+@import 'components/overall';
+@import 'components/about';
+@import 'components/stats';
+@import 'components/followers';
+@import 'components/media';
+@import 'components/filter';
+@import 'components/who-to-follow';
+@import 'components/trending-topics';
+@import 'components/institutional';
+@import 'components/tweets';
+
+.wrapper.app {
+  background-color: #f5f8fa;
+  display: table;
+  margin: 0 auto;
+  max-width: 1190px;
+  margin-top: 320px;
+  padding: 61px 10px 200px 10px;
+  position: relative;
+  width: calc(100% - 20px);
+}
+
+.wrapper.app:before,
+.wrapper.app:after {
+  content: '';
+  display: block;
+}
+
+.wrapper.app:before {
+  background-color: #fff;
+  border-bottom: solid 1px #e1e8ed;
+  border-top: solid 2px #e1e8ed;
+  height: 60px;
+  left: calc(((100vw - 100%) / 2) * -1);
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+.wrapper.app:after {
+  clear: both;
+  content: '';
+  display: block;
+  position: relative;
+}
+
+.wrapper.app > .title {
+  display: none;
+}
+
+.wrapper.app + [style] {
+  display: none;
+}
+
+@media only screen and (min-width: 674px) {
+  .wrapper.app {
+    display: block;
+    padding: 61px 0 10px 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1190px) {
+  .wrapper.app {
+    padding: 61px 0;
+  }
+}

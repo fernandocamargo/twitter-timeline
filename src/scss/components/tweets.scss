@@ -1,0 +1,376 @@
+.article.tweet {
+  background-color: #fff;
+  background-position: -9999px -9999px;
+  background-repeat: no-repeat;
+  border-bottom: solid 1px #e1e8ed;
+  border-left: solid 1px #e1e8ed;
+  border-right: solid 1px #e1e8ed;
+  padding: 9px 12px 9px 70px;
+  position: relative;
+  width: calc(100% - 84px);
+}
+
+.article.tweet .fragment.separator {
+  display: none;
+}
+
+.article.tweet:hover {
+  background-color: #f5f8fa;
+}
+
+.article.tweet:last-child {
+  border-radius: 0 0 5px 5px;
+}
+
+.article.tweet .definition .title {
+  display: none;
+}
+
+.article.tweet .definition.author {
+  float: left;
+}
+
+.article.tweet .definition.author,
+.article.tweet .definition.author .description,
+.article.tweet .definition.author .anchor,
+.article.tweet .definition.author .anchor:before {
+  background-image: inherit;
+  background-position: inherit;
+  background-repeat: no-repeat;
+}
+
+.article.tweet .definition.author .description {
+  line-height: 1;
+}
+
+.article.tweet .definition.author .anchor:before {
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  content: '';
+  display: block;
+  height: 48px;
+  left: 12px;
+  overflow: hidden;
+  position: absolute;
+  top: 9px;
+  width: 48px;
+}
+
+.article.tweet .definition.author .anchor {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.article.tweet .definition.author .fragment.name {
+  color: #292f33;
+  font-weight: bold;
+}
+
+.article.tweet .definition.author .anchor:hover .fragment.name {
+  color: #a8a1a2;
+  text-decoration: underline;
+}
+
+.article.tweet .definition.author .fragment.username {
+  color: #8899a6;
+  display: block;
+  font-size: 13px;
+}
+
+.article.tweet .definition.date {
+  clear: both;
+  position: relative;
+}
+
+.article.tweet .definition.date .anchor {
+  position: relative;
+  text-decoration: none;
+}
+
+.article.tweet .definition.date .fragment.relative {
+  color: #8899a6;
+  font-size: 13px;
+  position: relative;
+}
+
+.article.tweet .definition.date .anchor:hover .fragment.relative {
+  text-decoration: underline;
+}
+
+.article.tweet .definition.date .fragment.relative:before {
+  content: '.';
+  display: inline-block;
+  margin-right: 5px;
+  position: relative;
+  top: -5px;
+}
+
+.article.tweet .definition.date .fragment.absolute {
+  background-color: #292f33;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: 50%;
+  margin-left: -79px;
+  min-width: calc(170px - 22px);
+  padding: 6px 11px;
+  position: absolute;
+  text-align: center;
+  text-overflow: ellipsis;
+  top: -35px;
+  white-space: nowrap;
+}
+
+.article.tweet .definition.date .fragment.absolute:after {
+  border-color: transparent;
+  border-style: solid;
+  border-top-color: #292f33;
+  border-width: 5px 5px 0;
+  content: '';
+  display: block;
+  height: 0;
+  left: 50%;
+  margin-left: -2.5px;
+  position: absolute;
+  top: 100%;
+  width: 0;
+}
+
+.article.tweet .definition.date .anchor:hover .fragment.absolute {
+  display: block;
+}
+
+.article.tweet .quote {
+  clear: both;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.article.tweet .quote .anchor {
+  color: #a8a1a2;
+  text-decoration: none;
+}
+
+.article.tweet .quote .anchor:hover {
+  text-decoration: underline;
+}
+
+.article.tweet .definition.media {
+  display: none;
+}
+
+.article.tweet .navigation.actions {
+  margin-top: 10px;
+}
+
+.article.tweet .navigation.actions > .collection:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.article.tweet .navigation.actions > .collection > .item {
+  float: left;
+  position: relative;
+}
+
+.article.tweet .navigation.actions .item.reply,
+.article.tweet .navigation.actions .item.retweet,
+.article.tweet .navigation.actions .item.like {
+  width: 50px;
+}
+
+.article.tweet .navigation.actions .item .anchor,
+.article.tweet .navigation.actions .fragment.counter {
+  line-height: 1;
+}
+
+.article.tweet .navigation.actions .item .anchor {
+  text-decoration: none;
+}
+
+.article.tweet .navigation.actions .fragment.counter {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 10px;
+  position: relative;
+  top: -2px;
+}
+
+.article.tweet .navigation.actions > .collection > .item > .anchor {
+  color: #aab8c2;
+}
+
+.article.tweet .navigation.actions .item.reply .anchor:hover {
+  color: #a8a1a2;
+}
+
+.article.tweet .navigation.actions .item.retweet .anchor:hover {
+  color: #19cf86;
+}
+
+.article.tweet .navigation.actions .item.like .anchor:hover {
+  color: #e81c4f;
+}
+
+.article.tweet .navigation.actions > .collection > .item > .anchor:before {
+  display: inline-block;
+}
+
+.article.tweet .navigation.actions .item.reply .anchor:before,
+.article.tweet .navigation.actions .item.retweet .anchor:before,
+.article.tweet .navigation.actions .item.more > .anchor:before {
+  font-family: 'rosetta-icons';
+  font-size: 16px;
+}
+
+.article.tweet .navigation.actions .item.reply .anchor:before {
+  content: '\f151';
+}
+
+.article.tweet .navigation.actions .item.retweet .anchor:before {
+  content: '\f152';
+}
+
+.article.tweet .navigation.actions .item.like > .anchor:before {
+  background: -17px -17px url(/assets/image/sprites/heart.png) no-repeat;
+  background-size: 1450px 50px;
+  content: '';
+  height: 16px;
+  overflow: hidden;
+  position: relative;
+  top: 2px;
+  width: 16px;
+}
+
+.article.tweet .navigation.actions .item.like > .anchor:hover:before {
+  background-position: -467px -17px;
+}
+
+.article.tweet .navigation.actions .item.more > .anchor:before {
+  content: '\f150';
+}
+
+.article.tweet .navigation.actions > .collection > .item > .anchor .label {
+  background-color: #292f33;
+  border-radius: 4px;
+  bottom: calc(100% + 10px);
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  left: -30px;
+  opacity: 0.95;
+  padding: 6px 11px;
+  position: absolute;
+  text-align: center;
+  width: 60px;
+}
+
+.article.tweet .navigation.actions > .collection > .item > .anchor:hover .label {
+  display: block;
+}
+
+.article.tweet .navigation.actions > .collection > .item > .anchor .label:after {
+  border-color: transparent;
+  border-style: solid;
+  border-top-color: #292f33;
+  border-width: 5px 5px 0;
+  content: '';
+  display: block;
+  height: 0;
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  top: 100%;
+  width: 0;
+}
+
+.article.tweet .navigation.actions .item .collection {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  display: none;
+  padding: 10px 0;
+  position: absolute;
+  right: -15px;
+  top: calc(100% + 5px);
+  z-index: 1;
+  width: 250px;
+}
+
+.article.tweet .navigation.actions .item .collection:before,
+.article.tweet .navigation.actions .item .collection:after {
+  border-bottom: 9px solid #8899a6;
+  border-bottom-color: #8899a6;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  bottom: 100%;
+  content: '';
+  display: block;
+  position: absolute;
+  right: 16px;
+}
+
+.article.tweet .navigation.actions .item .collection:after {
+  border-bottom: 9px solid rgba(255, 255, 255, 0.98);
+  border-bottom-color: rgba(255, 255, 255, 0.98);
+  margin-top: -1px;
+}
+
+.article.tweet .navigation.actions .item.more .anchor:hover + .collection,
+.article.tweet .navigation.actions .item.more .anchor + .collection:hover {
+  display: block;
+}
+
+.article.tweet .navigation.actions .item .collection .anchor {
+  color: #66757f;
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
+  padding: 5px 20px;
+}
+
+.article.tweet .navigation.actions .item .collection .anchor:hover {
+  background-color: #a8a1a2;
+  color: #fff;
+}
+
+@media only screen and (min-width: 674px) {
+  .article.tweet .navigation.actions .item.reply,
+  .article.tweet .navigation.actions .item.retweet,
+  .article.tweet .navigation.actions .item.like {
+    width: 80px;
+  }
+
+  .article.tweet .definition.author .fragment.username {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .article.tweet .definition.date {
+    clear: none;
+    float: left;
+  }
+
+  .article.tweet .definition.date .fragment.relative:before {
+    margin: 0 5px;
+  }
+}
+
+@media only screen and (min-width: 1190px) {
+  .article.tweet .navigation.actions .item .collection {
+    left: -15px;
+    right: auto;
+  }
+
+  .article.tweet .navigation.actions .item .collection:before,
+  .article.tweet .navigation.actions .item .collection:after {
+    left: 16px;
+    right: auto;
+  }
+}

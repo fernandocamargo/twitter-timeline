@@ -1,0 +1,71 @@
+.wrapper.trending-topics {
+  background-color: #fff;
+  border: solid 1px #e1e8ed;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+  padding: 15px;
+  position: relative;
+  width: calc(100% - 32px);
+}
+
+.wrapper.trending-topics > .title {
+  color: #66757f;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.wrapper.trending-topics > .navigation.actions .item:before {
+  content: '.';
+  display: inline-block;
+  line-height: 1;
+  margin-right: 5px;
+  position: relative;
+  top: -3px;
+}
+
+.wrapper.trending-topics > .navigation.actions .item .anchor {
+  color: #a8a1a2;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.wrapper.trending-topics > .navigation.actions .item .anchor:hover {
+  text-decoration: underline;
+}
+
+.wrapper.trending-topics .definition,
+.wrapper.trending-topics .definition .anchor {
+  color: #a8a1a2;
+  font-size: 13px;
+}
+
+.wrapper.trending-topics .definition {
+  line-height: 17px;
+  margin-top: 10px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.wrapper.trending-topics .definition .fragment {
+  display: none;
+}
+
+.wrapper.trending-topics .definition .anchor {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.wrapper.trending-topics .definition .anchor:hover {
+  text-decoration: underline;
+}
+
+.wrapper.trending-topics .definition .anchor:after {
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
