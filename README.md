@@ -6,6 +6,19 @@ A [React](https://react.dev/) + [Redux](https://redux.js.org/) application that 
 
 **[View Live Demo on Vercel](https://twitter-timeline-khaki.vercel.app)**
 
+## 📱 Screenshots
+
+The application showcases excellent responsive design across all device sizes:
+
+### Mobile (375x667 - iPhone SE)
+<img src="screenshots/mobile.png" alt="Mobile view" width="375">
+
+### Tablet (768x1024 - iPad)
+<img src="screenshots/tablet.png" alt="Tablet view" width="600">
+
+### Desktop (1920x1080 - Full HD)
+<img src="screenshots/desktop.png" alt="Desktop view" width="900">
+
 ## ✨ Features
 
 - 📱 Twitter Timeline UI with tweets, media, and interactions
