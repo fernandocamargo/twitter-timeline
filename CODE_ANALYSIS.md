@@ -8,24 +8,24 @@ This project represents **mid-2016 era React development**, a pivotal period in 
 
 **Frontend Stack:**
 - **[React 15.3.0](https://github.com/facebook/react/blob/main/CHANGELOG.md#1530-july-29-2016)** (Released July 2016)
-  - Era of class components and `PropTypes`
-  - Pre-Hooks (Hooks introduced in React 16.8, February 2019)
-  - Mature component lifecycle methods
-  - Transition period from `React.createClass` to ES6 classes
+  - Era of [class components](https://react.dev/reference/react/Component) and [PropTypes](https://www.npmjs.com/package/prop-types)
+  - Pre-[Hooks](https://react.dev/reference/react/hooks) (Hooks introduced in React 16.8, February 2019)
+  - Mature [component lifecycle methods](https://react.dev/reference/react/Component#lifecycle)
+  - Transition period from `React.createClass` to [ES6 classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
 - **[Redux 3.5.2](https://github.com/reduxjs/redux/releases/tag/v3.5.2)** (Released June 2016)
-  - Flux architecture implementation at its peak popularity
-  - Pre-Redux Toolkit era (RTK released 2019)
-  - Manual action creators and reducers
+  - [Flux architecture](https://facebookarchive.github.io/flux/) implementation at its peak popularity
+  - Pre-[Redux Toolkit](https://redux-toolkit.js.org/) era (RTK released 2019)
+  - Manual [action creators](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow#actions) and [reducers](https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers#writing-reducers)
   - [Immutable.js](https://immutable-js.com/) for state management
 
 - **[Webpack 1.13.1](https://github.com/webpack/webpack/releases/tag/v1.13.1)** (Released June 2016)
   - Pre-Webpack 4 era (zero-config came later)
   - Manual configuration required
-  - Code splitting and hot module replacement emerging
+  - [Code splitting](https://webpack.js.org/guides/code-splitting/) and [hot module replacement](https://webpack.js.org/concepts/hot-module-replacement/) emerging
 
 **Build Tools Era:**
-- **[Babel 6](https://babeljs.io/blog/2015/10/29/6.0.0)** (ES6/ES2015 transformation)
+- **[Babel 6](https://babeljs.io/blog/2015/10/29/6.0.0)** ([ES6/ES2015](https://babeljs.io/docs/learn) transformation)
 - **[SCSS/Sass](https://sass-lang.com/)** (CSS preprocessing standard)
 - **[ESLint 3](https://eslint.org/blog/2016/07/eslint-v3.0.0-released/)** (JavaScript linting)
 
@@ -33,9 +33,9 @@ This project represents **mid-2016 era React development**, a pivotal period in 
 
 ## 🏗️ Architecture & Design Patterns
 
-### 1. **Flux Architecture (Redux Implementation)**
+### 1. **[Flux Architecture](https://facebookarchive.github.io/flux/) ([Redux](https://redux.js.org/) Implementation)**
 
-The application follows the **unidirectional data flow** pattern popularized by Facebook's Flux:
+The application follows the **[unidirectional data flow](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)** pattern popularized by Facebook's Flux:
 
 ```javascript
 // src/js/client/containers/app.js
@@ -48,18 +48,18 @@ export default connect(mapStateToProps)(AppContainer)
 ```
 
 **Key Characteristics:**
-- **Single Source of Truth**: Centralized state in Redux store
-- **State is Read-Only**: Mutations only through dispatched actions
-- **Pure Reducers**: State changes via pure functions
+- **[Single Source of Truth](https://redux.js.org/understanding/thinking-in-redux/three-principles#single-source-of-truth)**: Centralized state in Redux store
+- **[State is Read-Only](https://redux.js.org/understanding/thinking-in-redux/three-principles#state-is-read-only)**: Mutations only through dispatched actions
+- **[Pure Reducers](https://redux.js.org/understanding/thinking-in-redux/three-principles#changes-are-made-with-pure-functions)**: State changes via [pure functions](https://en.wikipedia.org/wiki/Pure_function)
 
 **Pattern Significance:**
 - Predictable state management
-- Time-travel debugging capability (Redux DevTools)
-- Separation of concerns between data and presentation
+- Time-travel debugging capability ([Redux DevTools](https://github.com/reduxjs/redux-devtools))
+- [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) between data and presentation
 
-### 2. **Container/Presentational Component Pattern**
+### 2. **[Container/Presentational Component Pattern](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)**
 
-A **seminal pattern** from Dan Abramov (Redux creator), clearly implemented:
+A **seminal pattern** from [Dan Abramov](https://overreacted.io/) (Redux creator), clearly implemented:
 
 ```
 src/js/client/
@@ -72,19 +72,19 @@ src/js/client/
 ```
 
 **Container Components** (`containers/app.js`):
-- Connected to Redux via `connect()`
+- Connected to Redux via [`connect()`](https://react-redux.js.org/api/connect)
 - Handle data fetching and business logic
-- Manage lifecycle methods
-- Pass data down as props
+- Manage [lifecycle methods](https://react.dev/reference/react/Component#lifecycle)
+- Pass data down as [props](https://react.dev/learn/passing-props-to-a-component)
 
 **Presentational Components** (`components/*`):
 - Focus solely on UI rendering
-- Receive data via props
-- Stateless when possible
+- Receive data via [props](https://react.dev/learn/passing-props-to-a-component)
+- [Stateless](https://react.dev/reference/react/Component#alternatives) when possible
 - Highly reusable
 
 **Benefits:**
-- Clear separation of concerns
+- Clear [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
 - Enhanced testability
 - Component reusability
 - Better code organization
@@ -116,13 +116,13 @@ export default (state = initialState, action) => {
 }
 ```
 
-**Why Immutable.js (2016 context):**
-- **Performance**: Structural sharing prevents unnecessary re-renders
+**Why [Immutable.js](https://immutable-js.com/) (2016 context):**
+- **Performance**: [Structural sharing](https://en.wikipedia.org/wiki/Persistent_data_structure) prevents unnecessary re-renders
 - **Safety**: Prevents accidental mutations
-- **Rich API**: `Map`, `List`, `Set` with functional methods
-- **Time-travel debugging**: Enables Redux DevTools
+- **Rich API**: [`Map`](https://immutable-js.com/docs/v4.3.7/Map/), [`List`](https://immutable-js.com/docs/v4.3.7/List/), [`Set`](https://immutable-js.com/docs/v4.3.7/Set/) with functional methods
+- **Time-travel debugging**: Enables [Redux DevTools](https://github.com/reduxjs/redux-devtools)
 
-**Modern Note**: While Immer has largely replaced Immutable.js today, this was the standard approach in 2016.
+**Modern Note**: While [Immer](https://immerjs.github.io/immer/) has largely replaced Immutable.js today, this was the standard approach in 2016.
 
 ### 4. **Middleware Pattern (Redux Thunk)**
 
@@ -146,12 +146,12 @@ export const fetch = function (type, dispatch) {
 ```
 
 **Pattern Benefits:**
-- Handles async operations in Redux
+- Handles [async operations](https://redux.js.org/tutorials/fundamentals/part-6-async-logic) in Redux
 - Loading states management
 - Error handling capability
 - Sequential data transformations
 
-### 5. **Factory Pattern in Mock Data**
+### 5. **[Factory Pattern](https://refactoring.guru/design-patterns/factory-method) in Mock Data**
 
 Serverless functions use factory pattern for data generation:
 
@@ -216,9 +216,9 @@ class AppContainer extends Component {
 ```
 
 **Design Decisions:**
-- **Static PropTypes**: Type checking (pre-TypeScript era)
-- **Lifecycle Methods**: `componentDidMount` for data fetching
-- **Method Binding**: Proper `this` context management
+- **Static [PropTypes](https://www.npmjs.com/package/prop-types)**: Type checking (pre-[TypeScript](https://www.typescriptlang.org/) era)
+- **[Lifecycle Methods](https://react.dev/reference/react/Component#lifecycle)**: [`componentDidMount`](https://react.dev/reference/react/Component#componentdidmount) for data fetching
+- **Method Binding**: Proper [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) context management
 - **Separation**: Logic methods separated from render
 
 #### 2. **Complex Presentational Component** (Tweet Rendering)
@@ -268,13 +268,13 @@ export default class Tweet extends Component {
 **Sophisticated Algorithm:**
 - **Entity Processing**: Handles URLs, mentions, hashtags, media
 - **Index-based Parsing**: Maintains text integrity with entities
-- **Functional Composition**: Uses `reduce` for complex transformations
+- **[Functional Composition](https://en.wikipedia.org/wiki/Function_composition)**: Uses [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) for complex transformations
 - **Extensible**: Easy to add new entity types
 
 **Pattern Highlights:**
-- **Strategy Pattern**: `getEntitiesReplacements()` maps types to renderers
-- **Builder Pattern**: Incrementally constructs tweet fragments
-- **Pure Functions**: Deterministic rendering logic
+- **[Strategy Pattern](https://refactoring.guru/design-patterns/strategy)**: `getEntitiesReplacements()` maps types to renderers
+- **[Builder Pattern](https://refactoring.guru/design-patterns/builder)**: Incrementally constructs tweet fragments
+- **[Pure Functions](https://en.wikipedia.org/wiki/Pure_function)**: Deterministic rendering logic
 
 ### State Management Architecture
 
@@ -322,13 +322,13 @@ const createServer = (server) => {
 }
 ```
 
-**Middleware Chain:**
-1. **Body Parser**: Request parsing
-2. **Logger**: Development logging (Morgan)
-3. **CORS**: Cross-origin support
+**[Middleware](https://expressjs.com/en/guide/using-middleware.html) Chain:**
+1. **[Body Parser](https://www.npmjs.com/package/body-parser)**: Request parsing
+2. **Logger**: Development logging ([Morgan](https://www.npmjs.com/package/morgan))
+3. **[CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)**: Cross-origin support
 4. **Router**: Modular route handling
 
-### RESTful API Design
+### [RESTful API](https://restfulapi.net/) Design
 
 ```javascript
 // src/js/server/mock-twitter-api.js
@@ -351,13 +351,13 @@ router.get('/statuses/user_timeline.json', (req, res) => {
 });
 ```
 
-**REST Principles:**
+**[REST](https://restfulapi.net/) Principles:**
 - **Resource-oriented URLs**: `/users/show`, `/statuses/user_timeline`
-- **Query Parameters**: Filtering and pagination
-- **JSON Responses**: Consistent data format
-- **HTTP Methods**: Proper GET usage
+- **[Query Parameters](https://en.wikipedia.org/wiki/Query_string)**: Filtering and pagination
+- **[JSON](https://www.json.org/) Responses**: Consistent data format
+- **[HTTP Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)**: Proper [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) usage
 
-### Serverless Architecture (Vercel)
+### [Serverless Architecture](https://vercel.com/docs/functions) (Vercel)
 
 ```javascript
 // api/twitter/users/show.json.js
@@ -374,10 +374,10 @@ module.exports = (req, res) => {
 };
 ```
 
-**Serverless Benefits:**
+**[Serverless](https://en.wikipedia.org/wiki/Serverless_computing) Benefits:**
 - **Auto-scaling**: Handles traffic spikes
 - **Cost-effective**: Pay per invocation
-- **Global CDN**: Low latency worldwide
+- **Global [CDN](https://en.wikipedia.org/wiki/Content_delivery_network)**: Low latency worldwide
 - **Zero DevOps**: Managed infrastructure
 
 ---
@@ -416,10 +416,10 @@ The project demonstrates **exemplary separation of structure and presentation**,
 </article>
 ```
 
-**Semantic Excellence:**
-- **`<article>`**: Self-contained composition
-- **`<dl>`, `<dt>`, `<dd>`**: Definition lists for metadata
-- **`<blockquote>`**: Quoted content (tweet text)
+**[Semantic HTML](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html) Excellence:**
+- **[`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)**: Self-contained composition
+- **[`<dl>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl), [`<dt>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt), [`<dd>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd)**: Definition lists for metadata
+- **[`<blockquote>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote)**: Quoted content (tweet text)
 - **Class names describe content, not presentation**: `author`, `definition`, `fragment`
 
 #### 2. **SCSS Modular Architecture**
@@ -479,7 +479,7 @@ The project demonstrates **exemplary separation of structure and presentation**,
 
 **Sophisticated Responsive Techniques:**
 
-**A. CSS Calc() for Fluid Layouts:**
+**A. [CSS `calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) for Fluid Layouts:**
 ```scss
 .wrapper.app {
   width: calc(100% - 20px);  // Responsive gutters
@@ -494,7 +494,7 @@ The project demonstrates **exemplary separation of structure and presentation**,
 
 **Explanation**: This calculates the negative margin needed to break out of the container and span the full viewport width - an advanced technique for edge-to-edge sections within constrained layouts.
 
-**B. Viewport Units (vw) for Breakout Sections:**
+**B. [Viewport Units](https://developer.mozilla.org/en-US/docs/Web/CSS/length#relative_length_units_based_on_viewport) (`vw`) for Breakout Sections:**
 ```scss
 .wrapper.profile:before {
   left: calc(((100vw - 100%) / 2) * -1);
@@ -549,9 +549,9 @@ The project demonstrates **exemplary separation of structure and presentation**,
 }
 ```
 
-**Historical Context**: In 2016, icon fonts were the standard (Font Awesome, Glyphicons). SVG sprites came later.
+**Historical Context**: In 2016, icon fonts were the standard ([Font Awesome](https://fontawesome.com/), [Glyphicons](https://www.glyphicons.com/)). [SVG sprites](https://css-tricks.com/svg-sprites-use-better-icon-fonts/) came later.
 
-**B. Clearfix Pattern:**
+**B. [Clearfix Pattern](https://css-tricks.com/snippets/css/clear-fix/):**
 ```scss
 .wrapper.app:after {
   clear: both;
@@ -560,14 +560,14 @@ The project demonstrates **exemplary separation of structure and presentation**,
 }
 ```
 
-**C. CSS Gradients for Depth:**
+**C. [CSS Gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient) for Depth:**
 ```scss
 .wrapper.profile .navigation.actions .anchor:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
 }
 ```
 
-**D. Box Shadows for Focus States (Accessibility):**
+**D. [Box Shadows](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) for Focus States (Accessibility):**
 ```scss
 .wrapper.profile .navigation.actions .anchor:active {
   box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(168, 161, 162, 0.5);
@@ -581,11 +581,11 @@ The project demonstrates **exemplary separation of structure and presentation**,
 ```scss
 // GPU-accelerated animations
 .element {
-  transform: translateZ(0);  // Forces GPU compositing
-  will-change: transform;    // Performance hint
+  transform: translateZ(0);  // Forces [GPU compositing](https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance)
+  will-change: transform;    // [Performance hint](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change)
 }
 
-// Text rendering optimization
+// [Text rendering](https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth) optimization
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -608,7 +608,7 @@ body {
 </a>
 ```
 
-### 2. **Definition Lists for Metadata**
+### 2. **[Definition Lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl) for Metadata**
 
 ```jsx
 <dl className="definition author">
@@ -621,9 +621,9 @@ body {
 </dl>
 ```
 
-**Semantic Meaning**: `<dl>` (definition list) is perfect for key-value pairs like author info, dates, stats.
+**Semantic Meaning**: [`<dl>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl) (definition list) is perfect for key-value pairs like author info, dates, stats.
 
-### 3. **Keyboard Navigation Support**
+### 3. **[Keyboard Navigation](https://webaim.org/techniques/keyboard/) Support**
 
 Focus states properly styled for accessibility:
 
@@ -658,11 +658,11 @@ module.exports = {
 }
 ```
 
-**Webpack 1 Features:**
-- **Context**: Base directory for entry points
-- **Source Maps**: Debugging support
-- **Loaders**: Babel, SCSS, file loaders
-- **Plugins**: HTML generation, compression
+**[Webpack 1](https://webpack.js.org/) Features:**
+- **[Context](https://webpack.js.org/configuration/entry-context/#context)**: Base directory for entry points
+- **[Source Maps](https://webpack.js.org/configuration/devtool/)**: Debugging support
+- **[Loaders](https://webpack.js.org/concepts/loaders/)**: Babel, SCSS, file loaders
+- **[Plugins](https://webpack.js.org/concepts/plugins/)**: HTML generation, compression
 
 ### Babel Transformation
 
@@ -682,20 +682,20 @@ module.exports = {
 ```
 
 **Enables:**
-- ES6 → ES5 compilation
-- JSX transformation
-- Experimental features (stage-0)
-- Decorators (for Redux connect)
+- [ES6](https://babeljs.io/docs/learn) → ES5 compilation
+- [JSX](https://react.dev/learn/writing-markup-with-jsx) transformation
+- Experimental features ([stage-0](https://babeljs.io/docs/babel-preset-stage-0))
+- [Decorators](https://babeljs.io/docs/babel-plugin-proposal-decorators) (for Redux connect)
 
 ### Development Experience
 
-**Hot Module Replacement:**
+**[Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/):**
 ```javascript
 // src/js/server/webpack-hot-reload.js
 // Enables live editing without refresh
 ```
 
-**Concurrent Processes:**
+**Concurrent Processes ([concurrently](https://www.npmjs.com/package/concurrently)):**
 ```json
 {
   "scripts": {
@@ -710,7 +710,7 @@ Runs Express backend + Webpack dev server simultaneously.
 
 ## 💎 Code Quality & Best Practices
 
-### 1. **PropTypes for Type Safety**
+### 1. **[PropTypes](https://www.npmjs.com/package/prop-types) for Type Safety**
 
 ```javascript
 class AppContainer extends Component {
@@ -720,9 +720,9 @@ class AppContainer extends Component {
 }
 ```
 
-**Pre-TypeScript Era**: PropTypes provided runtime type checking.
+**Pre-[TypeScript](https://www.typescriptlang.org/) Era**: PropTypes provided runtime type checking.
 
-### 2. **Pure Functions & Composition**
+### 2. **[Pure Functions](https://en.wikipedia.org/wiki/Pure_function) & [Composition](https://en.wikipedia.org/wiki/Function_composition)**
 
 ```javascript
 export const formatTweets = function (data) {
@@ -738,12 +738,12 @@ export const formatTweets = function (data) {
 }
 ```
 
-**Functional Programming:**
-- No side effects in data transformations
-- Function composition with `.then()` chains
-- Recursive patterns for pagination
+**[Functional Programming](https://en.wikipedia.org/wiki/Functional_programming):**
+- No [side effects](https://en.wikipedia.org/wiki/Side_effect_(computer_science)) in data transformations
+- [Function composition](https://en.wikipedia.org/wiki/Function_composition) with [`.then()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) chains
+- [Recursive](https://en.wikipedia.org/wiki/Recursion_(computer_science)) patterns for pagination
 
-### 3. **Immutable Updates**
+### 3. **[Immutable](https://immutable-js.com/) Updates**
 
 ```javascript
 return state.set('profile', Map(action.data))
@@ -789,7 +789,7 @@ src/js/client/
 
 ## 📊 Performance Considerations
 
-### 1. **Code Splitting**
+### 1. **[Code Splitting](https://webpack.js.org/guides/code-splitting/)**
 
 ```javascript
 // webpack.config.js
@@ -808,8 +808,8 @@ Separate JS and CSS bundles for optimal loading.
 process.env.NODE_ENV = 'production'
 
 // Enables:
-// - UglifyJS minification
-// - Dead code elimination
+// - [UglifyJS](https://github.com/mishoo/UglifyJS) minification
+// - [Dead code elimination](https://webpack.js.org/guides/tree-shaking/)
 // - Production React builds (no warnings)
 ```
 
@@ -831,14 +831,14 @@ Small images inlined as base64, larger ones as separate files.
 
 | Pattern | Location | Purpose |
 |---------|----------|---------|
-| **Flux/Redux** | State management | Unidirectional data flow |
-| **Container/Presentational** | Component structure | Separation of concerns |
-| **Factory** | Mock data generation | Consistent data creation |
-| **Strategy** | Entity rendering | Pluggable rendering logic |
-| **Builder** | Tweet construction | Incremental fragment building |
-| **Middleware** | Redux Thunk | Async action handling |
-| **Observer** | React/Redux | State change notifications |
-| **Singleton** | Redux store | Single source of truth |
+| **[Flux](https://facebookarchive.github.io/flux/)/[Redux](https://redux.js.org/)** | State management | Unidirectional data flow |
+| **[Container/Presentational](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)** | Component structure | Separation of concerns |
+| **[Factory](https://refactoring.guru/design-patterns/factory-method)** | Mock data generation | Consistent data creation |
+| **[Strategy](https://refactoring.guru/design-patterns/strategy)** | Entity rendering | Pluggable rendering logic |
+| **[Builder](https://refactoring.guru/design-patterns/builder)** | Tweet construction | Incremental fragment building |
+| **[Middleware](https://redux.js.org/understanding/history-and-design/middleware)** | Redux Thunk | Async action handling |
+| **[Observer](https://refactoring.guru/design-patterns/observer)** | React/Redux | State change notifications |
+| **[Singleton](https://refactoring.guru/design-patterns/singleton)** | Redux store | Single source of truth |
 
 ---
 
@@ -940,13 +940,13 @@ Small images inlined as base64, larger ones as separate files.
 
 ### What Would Change in 2025
 
-1. **React Hooks** instead of class components
-2. **TypeScript** instead of PropTypes
-3. **Redux Toolkit** instead of manual reducers
-4. **CSS-in-JS** or Tailwind instead of SCSS
-5. **Vite** instead of Webpack 1
-6. **React Query** for data fetching
-7. **SVG icons** instead of icon fonts
+1. **[React Hooks](https://react.dev/reference/react/hooks)** instead of class components
+2. **[TypeScript](https://www.typescriptlang.org/)** instead of PropTypes
+3. **[Redux Toolkit](https://redux-toolkit.js.org/)** instead of manual reducers
+4. **[CSS-in-JS](https://cssinjs.org/)** or [Tailwind](https://tailwindcss.com/) instead of SCSS
+5. **[Vite](https://vitejs.dev/)** instead of Webpack 1
+6. **[React Query](https://tanstack.com/query/)** for data fetching
+7. **[SVG icons](https://css-tricks.com/svg-sprites-use-better-icon-fonts/)** instead of icon fonts
 
 ### What Remains Timeless
 
@@ -964,17 +964,30 @@ Small images inlined as base64, larger ones as separate files.
 
 **React/Redux Patterns:**
 - [Dan Abramov's "Presentational and Container Components"](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
-- [Redux Documentation](https://redux.js.org/)
+- [Redux Official Documentation](https://redux.js.org/)
 - [Thinking in React](https://react.dev/learn/thinking-in-react)
+- [React Lifecycle Methods](https://react.dev/reference/react/Component#lifecycle)
 
 **CSS Architecture:**
 - [CSS Zen Garden](http://www.csszengarden.com/)
 - [BEM Methodology](http://getbem.com/)
-- [SMACSS](http://smacss.com/)
+- [SMACSS - Scalable and Modular Architecture for CSS](http://smacss.com/)
+- [CSS Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+**Design Patterns:**
+- [Refactoring Guru - Design Patterns](https://refactoring.guru/design-patterns)
+- [Flux Architecture](https://facebookarchive.github.io/flux/)
+- [Gang of Four Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns)
 
 **Build Tools:**
 - [Webpack Documentation](https://webpack.js.org/)
 - [Babel Documentation](https://babeljs.io/)
+- [npm Documentation](https://docs.npmjs.com/)
+
+**Web Standards:**
+- [MDN Web Docs - HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [MDN Web Docs - CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [MDN Web Docs - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ---
 
