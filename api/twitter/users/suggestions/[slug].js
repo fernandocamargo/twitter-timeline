@@ -10,7 +10,8 @@ module.exports = (req, res) => {
     return res.status(200).end();
   }
 
-  const slug = req.query.slug;
+  // Extract slug from query, removing .json extension if present
+  const slug = (req.query.slug || '').replace(/\.json$/, '');
 
   // Pick random followers for suggestions
   const shuffled = [...randomFollowers].sort(() => 0.5 - Math.random());
