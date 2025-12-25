@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "1337:1337"  # Backend API
+      - "8080:8080"  # Webpack dev server
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
