@@ -118,17 +118,54 @@ const mockUser = (screenName, index = 0) => {
   };
 };
 
+// Extract hashtags from text and create entities
+const extractHashtags = (text) => {
+  const hashtagRegex = /#(\w+)/g;
+  const hashtags = [];
+  let match;
+
+  while ((match = hashtagRegex.exec(text)) !== null) {
+    hashtags.push({
+      text: match[1],
+      indices: [match.index, match.index + match[0].length]
+    });
+  }
+
+  return hashtags;
+};
+
 // Mock tweet
-const mockTweet = (id, text, screenName, hasMedia = false) => {
+const mockTweet = (id, text, screenName, hasMedia = false, index = 0) => {
+  // Generate varying dates (newer tweets first)
+  const now = new Date();
+  const hoursAgo = index * 2; // 2 hours between each tweet
+  const tweetDate = new Date(now.getTime() - (hoursAgo * 60 * 60 * 1000));
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const formattedDate = `${dayNames[tweetDate.getDay()]} ${monthNames[tweetDate.getMonth()]} ${String(tweetDate.getDate()).padStart(2, '0')} ${String(tweetDate.getHours()).padStart(2, '0')}:${String(tweetDate.getMinutes()).padStart(2, '0')}:${String(tweetDate.getSeconds()).padStart(2, '0')} +0000 ${tweetDate.getFullYear()}`;
+
+  const mediaUrl = "https://t.co/sample";
+  const tweetText = hasMedia ? text + " " + mediaUrl : text || "Sample tweet text";
+
+  // Extract hashtags from the text
+  const hashtags = extractHashtags(tweetText);
+
+  // If there are no entities at all, add a dummy symbol entity at position [0,0]
+  // This ensures the renderTweet function will process the text
+  const symbols = (hashtags.length === 0 && !hasMedia) ? [{
+    text: '',
+    indices: [0, 0]
+  }] : [];
+
   const tweet = {
-    created_at: "Wed Oct 10 20:19:24 +0000 2018",
+    created_at: formattedDate,
     id: id,
     id_str: id.toString(),
-    text: text,
+    text: tweetText,
     truncated: false,
     entities: {
-      hashtags: [],
-      symbols: [],
+      hashtags: hashtags,
+      symbols: symbols,
       user_mentions: [],
       urls: []
     },
@@ -144,24 +181,26 @@ const mockTweet = (id, text, screenName, hasMedia = false) => {
     place: null,
     contributors: null,
     is_quote_status: false,
-    retweet_count: Math.floor(Math.random() * 100),
-    favorite_count: Math.floor(Math.random() * 200),
+    retweet_count: Math.floor(Math.random() * 500) + 10,
+    favorite_count: Math.floor(Math.random() * 1000) + 20,
     favorited: false,
     retweeted: false,
-    lang: "en"
+    lang: screenName === 'americanascom' ? 'pt' : 'en'
   };
 
   if (hasMedia) {
     const imageId = (id % 1000) + 1;
     const imageUrl = `https://picsum.photos/800/600?random=${imageId}`;
+    const textLength = text.length + 1; // +1 for the space before the URL
+
     tweet.extended_entities = {
       media: [{
         id: id + 100,
         id_str: (id + 100).toString(),
-        indices: [0, 23],
+        indices: [textLength, textLength + mediaUrl.length],
         media_url: imageUrl,
         media_url_https: imageUrl,
-        url: "https://t.co/sample",
+        url: mediaUrl,
         display_url: "pic.twitter.com/sample",
         expanded_url: `https://twitter.com/${screenName}/status/${id}/photo/1`,
         type: "photo",
@@ -219,10 +258,15 @@ router.get('/statuses/user_timeline.json', (req, res) => {
   const screenName = req.query.screen_name || 'sampleuser';
   const count = parseInt(req.query.count) || 20;
   const includeRts = req.query.include_rts !== 'false';
+  const maxId = req.query.max_id;
 
-  const tweets = [];
+  // If pagination is requested (max_id provided), return empty array
+  // This tells the frontend there are no more tweets
+  if (maxId) {
+    return res.json([]);
+  }
 
-  // Realistic tweet content based on screen name
+  // Realistic tweet content based on screen name - exactly 20 tweets
   const tweetTemplates = screenName === 'americanascom' ? [
     "🔥 OFERTA IMPERDÍVEL! Confira os melhores preços em eletrônicos. Aproveite enquanto durarem os estoques!",
     "📱 Smartphones com até 40% OFF! Não perca essa oportunidade incrível. #BlackFriday #Ofertas",
@@ -267,12 +311,17 @@ router.get('/statuses/user_timeline.json', (req, res) => {
     "Remember: premature optimization is the root of all evil 🌱"
   ];
 
-  for (let i = 0; i < Math.min(count, 100); i++) {
+  const tweets = [];
+  // Generate 30 tweets to ensure we have enough media (at least 6)
+  // We'll cycle through the templates if needed
+  const numTweets = 30;
+
+  for (let i = 0; i < numTweets; i++) {
     const id = 1000000000000 + i;
     const text = tweetTemplates[i % tweetTemplates.length];
-    // Every 4th tweet has media
-    const hasMedia = i % 4 === 0;
-    tweets.push(mockTweet(id, text, screenName, hasMedia));
+    // Every 3rd tweet has media to ensure we get at least 10 media tweets
+    const hasMedia = i % 3 === 0;
+    tweets.push(mockTweet(id, text, screenName, hasMedia, i));
   }
 
   res.json(tweets);
