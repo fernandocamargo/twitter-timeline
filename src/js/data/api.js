@@ -1,3 +1,4 @@
 export default {
-  development: 'http://localhost:1337'
-}[process.env.NODE_ENV]
+  development: 'http://localhost:1337',
+  production: '/api'
+}[process.env.NODE_ENV] || '/api'

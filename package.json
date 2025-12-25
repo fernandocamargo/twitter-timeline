@@ -11,7 +11,8 @@
     "backend": "node ./src/js/server/back-end.js",
     "start": "npm run clean && concurrently \"npm run backend\" \"npm run reload\"",
     "publish": "npm run clean && npm run build",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "vercel-build": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -74,14 +75,14 @@
     "mocha": "^3.0.2",
     "mocha-webpack": "^0.6.0",
     "nock": "^8.0.0",
-    "node-sass": "^3.8.0",
     "react-hot-loader": "^1.3.0",
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
     "rimraf": "^2.5.4",
-    "sass-loader": "^4.0.0",
+    "sass": "^1.97.1",
+    "sass-loader": "^7.3.1",
     "sinon": "^1.17.5",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
