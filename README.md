@@ -201,8 +201,23 @@ Apache-2.0
 - GitHub: [@fernandocamargo](https://github.com/fernandocamargo)
 - Email: camargodelbuono@gmail.com
 
+## 📊 Technical Analysis
+
+**[📖 Read Comprehensive Code Analysis](./CODE_ANALYSIS.md)**
+
+Detailed technical documentation covering:
+- Architecture & design patterns (Redux, Container/Presentational, Factory, Strategy)
+- Historical context (2016 React/Redux era)
+- Advanced responsive design techniques
+- Semantic HTML & CSS Zen Garden philosophy
+- Full-stack implementation details
+- Code quality & best practices
+
+Perfect for technical interviews and portfolio presentations.
+
 ## 🔗 Links
 
 - **Live Demo:** https://twitter-timeline-khaki.vercel.app
 - **Original Repository:** https://github.com/fernandocamargo/twitter-timeline
+- **Code Analysis:** [CODE_ANALYSIS.md](./CODE_ANALYSIS.md)
 - **Deployment Guide:** [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)
