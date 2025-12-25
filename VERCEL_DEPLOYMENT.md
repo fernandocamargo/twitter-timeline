@@ -85,16 +85,16 @@ Environment-aware API endpoint configuration:
 
 After deployment, your app will be available at:
 ```
-https://your-project.vercel.app
+https://twitter-timeline-khaki.vercel.app
 ```
 
 API endpoints will be accessible at:
 ```
-https://your-project.vercel.app/api/twitter/users/show.json?screen_name=americanascom
-https://your-project.vercel.app/api/twitter/statuses/user_timeline.json?screen_name=americanascom
-https://your-project.vercel.app/api/twitter/followers/list.json?screen_name=americanascom
-https://your-project.vercel.app/api/twitter/users/suggestions.json
-https://your-project.vercel.app/api/twitter/trends/place.json
+https://twitter-timeline-khaki.vercel.app/api/twitter/users/show.json?screen_name=americanascom
+https://twitter-timeline-khaki.vercel.app/api/twitter/statuses/user_timeline.json?screen_name=americanascom
+https://twitter-timeline-khaki.vercel.app/api/twitter/followers/list.json?screen_name=americanascom
+https://twitter-timeline-khaki.vercel.app/api/twitter/users/suggestions.json
+https://twitter-timeline-khaki.vercel.app/api/twitter/trends/place.json
 ```
 
 ## 🎯 Benefits for Portfolio

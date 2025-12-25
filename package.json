@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/fernandocamargo/twitter-timeline/issues"
   },
-  "homepage": "https://github.com/fernandocamargo/twitter-timeline#readme",
+  "homepage": "https://twitter-timeline-khaki.vercel.app",
   "dependencies": {
     "body-parser": "^1.15.2",
     "classnames": "^2.2.5",
