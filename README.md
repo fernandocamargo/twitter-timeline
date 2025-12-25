@@ -6,19 +6,6 @@ A [React](https://react.dev/) + [Redux](https://redux.js.org/) application that 
 
 **[View Live Demo on Vercel](https://twitter-timeline-khaki.vercel.app)**
 
-## 📱 Screenshots
-
-The application showcases excellent responsive design across all device sizes:
-
-### Mobile (375x667 - iPhone SE)
-<img src="screenshots/mobile.png" alt="Mobile view" width="375">
-
-### Tablet (768x1024 - iPad)
-<img src="screenshots/tablet.png" alt="Tablet view" width="600">
-
-### Desktop (1920x1080 - Full HD)
-<img src="screenshots/desktop.png" alt="Desktop view" width="900">
-
 ## ✨ Features
 
 - 📱 Twitter Timeline UI with tweets, media, and interactions
@@ -256,6 +243,19 @@ While built with 2016 technology, the **fundamental patterns remain timeless**:
 This project implements the **[Twitter API v1.1](https://developer.twitter.com/en/docs/twitter-api/v1)** specification from **2016**, representing the state-of-the-art social media API design from that era. The API v1.1 was released by Twitter in 2012 and remained the primary API until Twitter API v2 was introduced in 2020.
 
 **[📖 Read Full Technical Analysis](./CODE_ANALYSIS.md)** for deep-dive into architecture, patterns, and implementation details.
+
+## 📱 Screenshots
+
+The application showcases excellent responsive design across all device sizes:
+
+### Mobile (375x667 - iPhone SE)
+<img src="screenshots/mobile.png" alt="Mobile view" width="375">
+
+### Tablet (768x1024 - iPad)
+<img src="screenshots/tablet.png" alt="Tablet view" width="600">
+
+### Desktop (1920x1080 - Full HD)
+<img src="screenshots/desktop.png" alt="Desktop view" width="900">
 
 ## 🔗 Links
 
